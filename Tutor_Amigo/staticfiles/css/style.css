@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(../images/BG.png);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    position: relative;
+    max-width: 20%;
+    top: 10px;
+}
+
+.Navigation ul {
+    position: relative;
+    display: flex;
+}
+
+.Navigation {
+    float: right;
+}
+
+.Navigation li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.Navigation li:first-child {
+    margin-left: 10px;
+}
+
+.Navigation li a {
+    display: inline-block;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.Navigation li a:hover {
+    background-color: greenyellow;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .text {
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+.content .text h2 {
+    color: black;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    line-height: 1.0em;
+    font-weight: 600;
+}
+
+.content .text p {
+    color: black;
+    letter-spacing: 1px;
+}
+
+.content .text a {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    background: #e51e2a;
+    color: black;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.content .text a:hover {
+    transform: translateY(-10px);
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+form {
+    float: right;
+}
+
+/* Elemento de classe "botao" */
+.botao {
+    font-size: 1.2em;
+    background: green;
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+/* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
+.botao:hover {
+    background: blue;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+}
+
+/* Elementos de classe botão e de tag <select> */
+.botao,
+select {
+    cursor: pointer;
+}
+
+/* Elemento de classe "botao-excluir" */
+.botao-excluir {
+    font-size: 1.2em;
+    background: green;
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+/* Elemento de classe "botao-excluir" com o estado da pseudoclasse "hover" */
+.botao-excluir:hover {
+    background: red;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+}
+
+/* Elementos de classe botao-excluir e de tag <select> */
+.botao-excluir,
+select {
+    cursor: pointer;
+}
+
+/*Dropdown*/
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.table-div {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+}
+
+.editar {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.excluir {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}

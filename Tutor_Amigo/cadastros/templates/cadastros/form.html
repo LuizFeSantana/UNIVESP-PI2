@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Página Inicial - Tutor Amigo</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="{%url 'inicio' %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"></a>
+            <nav class="Navigation">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Página Inicial</a>
+                    </li>
+                    <li><a href="{% url 'cad_animal' %}">Animais Cadastrados</a>
+                    </li>
+                    <li><a href="{% url 'parceiros' %}">Parceiros</a>
+                    </li>
+                    <li><a href="{% url 'sobre' %}">Sobre</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Cadastre-se</a>
+
+                        <div class="dropdown-menu">
+                            <a href="{% url 'cadastro-tutor' %}">Tutor</a>
+                            <br>
+                            <a href="{% url 'cadastro-ong' %}">Ong</a>
+                            <br>
+                            <a href="{% url 'cadastro-clinica' %}">Clínica</a>
+                            <br>
+                            <a href="{% url 'cadastro-veterinario' %}">Veterinário</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'login' %}">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <h3> Cadastro </h3>
+
+        <p class="lead">
+            Preencha todos os campos obrigatórios
+        </p>
+
+        <hr>
+
+        <form action="" method="post">
+
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit" class="botao"> Cadastrar</button>
+
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Sobre - Tutor Amigo</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="#"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"></a>
+            <nav class="Navigation">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Página Inicial</a>
+                    </li>
+                    <li><a href="{% url 'cad_animal' %}">Animais Cadastrados</a>
+                    </li>
+                    <li><a href="{% url 'parceiros' %}">Parceiros</a>
+                    </li>
+                    <li><a href="{% url 'sobre' %}">Sobre</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Cadastre-se</a>
+
+                        <div class="dropdown-menu">
+                            <a href="{% url 'cadastro-tutor' %}">Tutor</a>
+                            <br>
+                            <a href="{% url 'cadastro-ong' %}">Ong</a>
+                            <br>
+                            <a href="{% url 'cadastro-clinica' %}">Clínica</a>
+                            <br>
+                            <a href="{% url 'cadastro-veterinario' %}">Veterinário</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'login' %}">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="text">
+                <h2>Sobre Nós</h2>
+                <p>Somos alunos da Univesp (Universidade do Estado de São Paulo):</p>
+                <br>
+                <p>Alexandre Sbrana Gazoli Junior, 2006614</p>
+                <p>Antonione Santos Lourenço, 2106311</p>
+                <p>Cezar Vicente da Silva, 2101161</p>
+                <p>Cleber Carvalho Damasceno, 2108921</p>
+                <p>Luiz Felipe Santana da Silva, 2100259</p>
+                <p>Raul de Luca Roberto Rolim, 2105554</p>
+                <p>Rony Santos de Araujo, 2004722</p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+
+</html>

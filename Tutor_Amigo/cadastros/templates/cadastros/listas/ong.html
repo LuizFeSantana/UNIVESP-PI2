@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Página Inicial - Tutor Amigo</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="{%url 'inicio' %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"></a>
+            <nav class="Navigation">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Página Inicial</a>
+                    </li>
+                    <li><a href="{% url 'cad_animal' %}">Animais Cadastrados</a>
+                    </li>
+                    <li><a href="{% url 'parceiros' %}">Parceiros</a>
+                    </li>
+                    <li><a href="{% url 'sobre' %}">Sobre</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Cadastre-se</a>
+
+                        <div class="dropdown-menu">
+                            <a href="{% url 'cadastro-tutor' %}">Tutor</a>
+                            <br>
+                            <a href="{% url 'cadastro-ong' %}">Ong</a>
+                            <br>
+                            <a href="{% url 'cadastro-clinica' %}">Clínica</a>
+                            <br>
+                            <a href="{% url 'cadastro-veterinario' %}">Veterinário</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'login' %}">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <h3> Lista de campos registrados </h3>
+        <hr>
+        <div class="table-div">
+            <table class="table">
+                <tr>ID</tr>
+                <tr>CNPJ</tr>
+                <tr>RazaoSocial</tr>
+                <tr>email</tr>
+                <tr>resp</tr>
+                <tr>telefone</tr>
+                <tr>endereco</tr>
+                <tr>cep</tr>
+            </table> 
+            {% for clinica in object_list %}
+            <tr>
+                <td>{{ clinica.pk }}</td>
+                <td>{{ clinica.CNPJ }}</td>
+                <td>{{ clinica.RazaoSocial }}</td>
+                <td>{{ clinica.email }}</td>
+                <td>{{ clinica.resp }}</td>
+                <td>{{ clinica.telefone }}</td>
+                <td>{{ clinica.endereco }}</td>
+                <td>{{ clinica.cep }}</td>
+                <td>
+                    <a href="{% url 'editar-ong' ong.pk %}" class="btn editar" title="Editar">Editar</a>
+                    <a href="{% url 'excluir-ong' ong.pk %}" class="btn excluir" title="Excluir">Excluir</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">
+                    Nenhum campo registrado
+                </td>
+            </tr>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
+</html>
